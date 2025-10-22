@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Ubuntu Localhost Test</title>
-</head>
-<body>
-  <h1>🚀 It works!</h1>
-  <p>If you see this page from your Ubuntu browser, the setup is working.</p>
-  <p>Try visiting <a href="/api/test">/api/test</a> to test the API route.</p>
-</body>
-</html>
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/api/ping')
+def ping():
+    return jsonify({"message": "Backend connected!"})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
