@@ -1,4 +1,2 @@
-flask
+Flask
 flask-cors
-google-auth-oauthlib
-requests
